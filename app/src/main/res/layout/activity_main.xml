@@ -80,11 +80,13 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_menu_search"
+            app:srcCompat="@android:drawable/ic_menu_preferences"
             android:id="@+id/imageView2"
             android:layout_marginTop="15dp"
             android:layout_marginRight="10dp"
-            android:layout_weight="0.07" />
+            android:layout_weight="0.07"
+            android:onClick="fb"
+            />
 
     </LinearLayout>
 
@@ -97,14 +99,6 @@
         android:layout_below="@+id/tabs"
         android:id="@+id/wb" >
 
-        <Button
-            android:text="Reload server page"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_x="277dp"
-            android:layout_y="405dp"
-            android:onClick="reload"
-            android:id="@+id/button" />
     </WebView>
 
 </RelativeLayout>

@@ -1,5 +1,6 @@
 package citizenm.citizenm;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,10 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.Toast;
+
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        AppEventsLogger.activateApp(this);
         setContentView(R.layout.activity_main);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
@@ -53,39 +60,19 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void issues(View view) {
-        webview=(WebView)findViewById(R.id.wb);
-        webview.getSettings().setJavaScriptEnabled(true);
-        webview.addJavascriptInterface(new WebAppInterface(this), "Android");
-        webview.loadUrl("http://104.236.191.175/citizenm/index.php?p=issues");
-    }
 
-    public void people(View view) {
-        webview=(WebView)findViewById(R.id.wb);
-        webview.getSettings().setJavaScriptEnabled(true);
-        webview.addJavascriptInterface(new WebAppInterface(this), "Android");
-        webview.loadUrl("http://104.236.191.175/citizenm/index.php?p=people");
-    }
-
-    public void stats(View view) {
-        webview=(WebView)findViewById(R.id.wb);
-        webview.getSettings().setJavaScriptEnabled(true);
-        webview.addJavascriptInterface(new WebAppInterface(this), "Android");
-        webview.loadUrl("http://104.236.191.175/citizenm/index.php?p=stats");
-    }
-
-    public void prefs(View view) {
-        WebView webview=(WebView)findViewById(R.id.wb);
-        webview.getSettings().setJavaScriptEnabled(true);
-        webview.addJavascriptInterface(new WebAppInterface(this), "Android");
-        webview.loadUrl("http://104.236.191.175/citizenm/index.php?p=prefs");
-    }
 
     public void reload(View view) {
         webview.reload();
         tabs = (TabLayout) findViewById(R.id.tabs);
         int selectedTabPosition = tabs.getSelectedTabPosition(); // get the position for the current selected tab
         Log.d("test", Integer.toString(selectedTabPosition));
+        Toast.makeText(getApplicationContext(), "Reloading web view", Toast.LENGTH_SHORT).show();
+    }
+
+    public void fb(View view){
+        Intent i = new Intent(this, Login.class);
+        startActivity(i);
     }
 
 }
