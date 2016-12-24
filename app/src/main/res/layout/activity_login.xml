@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
@@ -8,23 +9,48 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="citizenm.citizenm.Login">
+    tools:context="citizenm.citizenm.Login"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/cm_logo"
+        android:layout_marginTop="-180dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/cmlogo" />
+
+    <TextView
+        android:layout_below="@+id/cmlogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Citizen M"
+        android:textSize="12pt"
+        android:layout_marginTop="-220dp"
+        android:id="@+id/textlogo"
+        android:textColor="#ffffff"
+        android:layout_centerHorizontal="true"
+        />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_below="@+id/cmlogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-150dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="9pt"
+         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/info"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:textSize="18sp"
         />
 
-    <com.facebook.login.widget.LoginButton
-        android:id="@+id/login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        />
+
 
 
     <Button
@@ -37,4 +63,8 @@
         android:id="@+id/button2"
         android:onClick="mainpage"
         />
+
+
+
+
 </RelativeLayout>
