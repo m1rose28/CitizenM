@@ -20,18 +20,6 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/cmlogo" />
 
-    <TextView
-        android:layout_below="@+id/cmlogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Citizen M"
-        android:textSize="12pt"
-        android:layout_marginTop="-220dp"
-        android:id="@+id/textlogo"
-        android:textColor="#ffffff"
-        android:layout_centerHorizontal="true"
-        />
-
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
         android:layout_below="@+id/cmlogo"
