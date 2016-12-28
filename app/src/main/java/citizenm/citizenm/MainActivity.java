@@ -12,20 +12,29 @@ import android.widget.Toast;
 
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
+import com.viralypatel.sharedpreferenceshelper.lib.SharedPreferencesHelper;
 
 public class MainActivity extends AppCompatActivity {
 
     public WebView webview;
     public TabLayout tabs;
+    SharedPreferencesHelper sph;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(this);
         setContentView(R.layout.activity_main);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+
+        sph = new SharedPreferencesHelper(this, "myappprefs");
+        String name = sph.getString("name");
+
+        Toast.makeText(getApplicationContext(),"Welcome "+name, Toast.LENGTH_SHORT).show();
+
         webview=(WebView)findViewById(R.id.wb);
         webview.getSettings().setJavaScriptEnabled(true);
         webview.addJavascriptInterface(new WebAppInterface(this), "Android");
