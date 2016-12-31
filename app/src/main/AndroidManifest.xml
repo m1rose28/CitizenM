@@ -3,19 +3,17 @@
     package="citizenm.citizenm">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
- \
+    \
     <application
+        android:name=".AppController"
         android:allowBackup="true"
-        android:name="citizenm.citizenm.AppController"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -42,12 +40,13 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".startActivity"
-            android:screenOrientation="portrait" >
-        </activity>
+        <activity
+            android:name=".startActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

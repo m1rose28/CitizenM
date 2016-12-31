@@ -8,7 +8,6 @@
     android:elevation="4dp"
     tools:context="citizenm.citizenm.MainActivity">
 
-
     <android.support.design.widget.TabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"
@@ -61,44 +60,44 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:text="Citizen M"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/textView2"
-            android:textSize="20dp"
-            android:textColor="@android:color/white"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="5dp"
-            android:layout_weight="1"
-            />
+            <TextView
+                android:text="Citizen M"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textView2"
+                android:textSize="20dp"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_menu_preferences"
-            android:id="@+id/imageView2"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="0.07"
-            android:onClick="fb"
-            />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_menu_preferences"
+                android:id="@+id/imageView2"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.07"
+                android:onClick="fb"
+                />
 
-    </LinearLayout>
+        </LinearLayout>
 
 
     </android.support.v7.widget.Toolbar>
 
-    <WebView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_recycler_view"
+        android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/tabs"
-        android:id="@+id/wb" >
-
-    </WebView>
+        android:layout_below="@id/tabs"/>
 
 </RelativeLayout>
+
