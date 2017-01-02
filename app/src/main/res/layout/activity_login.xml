@@ -31,12 +31,45 @@
          />
 
     <TextView
+        android:text="Enter zip code"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/info"
-        android:layout_alignParentBottom="true"
+        android:id="@+id/ziptext"
         android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="400dp"
+         />
+
+    <EditText
+        android:layout_width="100dp"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/ziptext"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/editZipText"
+        android:textSize="18sp" />
+
+    <Button
+        android:text="Submit"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/zipbutton"
+        android:textSize="18sp"
+        android:paddingTop="10dp"
+        android:textAlignment="textStart"
+        android:textColor="@android:color/white"
+        style="@style/com_facebook_button"
+        android:layout_below="@+id/editZipText"
+        android:layout_centerHorizontal="true"
+        android:onClick="checkzip"
         />
+
 
 
 </RelativeLayout>

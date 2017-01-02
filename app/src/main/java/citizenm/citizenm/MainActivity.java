@@ -62,9 +62,11 @@ public class MainActivity extends AppCompatActivity {
 
                 if (selectedTabPosition == 0) {
                     p = "issues";
+                    refreshlist(p);
                 }
                 if (selectedTabPosition == 1) {
                     p = "people";
+                    refreshlist(p);
                 }
                 if (selectedTabPosition == 2) {
                     p = "stats";
@@ -73,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
                     p = "prefs";
                 }
 
-                refreshlist(p);
 
             }
 
@@ -120,11 +121,17 @@ public class MainActivity extends AppCompatActivity {
 
         // Access the RequestQueue through your singleton class.
         AppController.getInstance().addToRequestQueue(jsArrayRequest);
-        Log.d("test2","test2");
 
     }
 
     private void showlist(JSONArray response){
+
+        int size = this.issueList.size();
+        if (size > 0) {
+            for (int i = 0; i < size; i++) {
+                this.issueList.remove(0);
+            }
+        }
 
         issue issue;
 
